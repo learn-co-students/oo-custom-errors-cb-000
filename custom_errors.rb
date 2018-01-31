@@ -10,10 +10,10 @@ class Person
 
     # raise PartnerError if the argument passed into #get_married method is not an instance of Person class
     if person.class != Person
-      begin
-        raise PartnerError
-      rescue PartnerError => error
-        puts error.message
+      begin # 1. if the argument passed into #get_married method is not an instance of Person class, `begin` error handling
+        raise PartnerError # 2. `raise` PartnerError
+      rescue PartnerError => error # 3. Then `rescue` PartnerError. The `rescue` method creates an instance of the PartnerError class (error)
+        puts error.message # 4. The #message method is then called on that instance of the PartnerError class (error.message)
       end
     else
       person.partner = self
@@ -53,7 +53,7 @@ puts beyonce.name
   - it can be defined in a module which is then included inside the Person class
 
   Raise a Custom Error
-  - Now when file runs, the result is custom error: `get_married': Person::PartnerError (Person::PartnerError)
+  - Now when the file runs, the result is custom error: `get_married': Person::PartnerError (Person::PartnerError)
 
   Custom Error Handling
   - The program is still broken and the last line of the file (puts beyonce.name) never gets executed because an error is raised for #get_married method
@@ -64,5 +64,9 @@ puts beyonce.name
     rescue YourCustomError
       // do something
     end
+
+  - Now when the file runs, the custom error message is printed out, but the program continues to run & executes the code that follows the #get_married method
+    #=> you must give the get_married method an argument of an instance of the person class!
+    #=> Beyonce
 
 =end
