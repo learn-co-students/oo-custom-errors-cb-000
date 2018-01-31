@@ -7,7 +7,14 @@ class Person
 
   def get_married(person)
     self.partner = person
-    person.partner = self
+
+    # raise PartnerError if the argument passed into #get_married method is not an instance of Person class
+    if person.class != Person
+      raise PartnerError
+    else
+      person.partner = self
+    end
+
   end
 
   # define a custom error class, PartnerError, that inherits from StandardError
@@ -36,5 +43,7 @@ puts beyonce.name
   - it can be defined inside the Person class
   - it can be defined outside the Person class
   - it can be defined in a module which is then included inside the Person class
+
+  Now when file runs, result is custom error: `get_married': Person::PartnerError (Person::PartnerError)
 
 =end
