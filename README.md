@@ -1,5 +1,5 @@
 # Code Along: Custom Error Handling
-
+xx
 ## Objectives
 
 * Create and raise custom error messages in Ruby.
@@ -13,7 +13,7 @@ from the Exception class. You'll become familiar with these error types:
 * `ArgumentError`
 * `SyntaxError`
 
-And these are just a few! Let's say, however, that we are working on a web
+And these are just a few! Let's say, however, that we are working on a web blahhhhhh
 application in which users can sign in and post pictures to Instagram. But wait!
 Instagram has been hacked and their entire site is currently down! Since our app
 relies on sending data to and getting a response from the Instagram site, our
